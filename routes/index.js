@@ -57,6 +57,11 @@ router.post("/api/add/rocket/:rocketId", async (req, res) => {
   const parsedRocketId = req.params.rocketId;
   // update the object
   const result = await db.FlightInProgress.update({ RocketId: parsedRocketId }, { where: { UserId: req.user.id } });
+  // result.addAmenities([1, 4, 5]);
+  const superResult = await db.FlightInProgress.findOne({ where: { UserId: req.user.id } });
+  console.log("123123\n\n\n\n\n", Object.keys(superResult));
+  console.log(superResult.__proto__);
+  superResult.addAmenities([1, 4, 5]);
   res.json(result);
 });
 
