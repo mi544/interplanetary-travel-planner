@@ -16,16 +16,12 @@ module.exports = function (sequelize, DataTypes) {
 
   Amenity.associate = function (models) {
 
-    Amenity.hasOne(models.Flight, {
-      foreignKey: {
-        allowNull: false
-      }
+    Amenity.belongsToMany(models.Flight, {
+      through: "FlightsAmenities"
     });
 
-    Amenity.hasOne(models.FlightInProgress, {
-      foreignKey: {
-        allowNull: true
-      }
+    Amenity.belongsToMany(models.FlightInProgress, {
+      through: "FlightsInProgressAmenities"
     });
 
     // Amenity.belongsToMany(models.Rocket, {

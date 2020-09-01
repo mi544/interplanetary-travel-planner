@@ -19,8 +19,9 @@ module.exports = function (sequelize, DataTypes) {
 
   FlightInProgress.associate = function (models) {
 
-    FlightInProgress.belongsTo(models.Amenity, {
-      foreignKey: {}
+    FlightInProgress.belongsToMany(models.Amenity, {
+      through: "FlightsAmenities"
+
     });
 
     FlightInProgress.belongsTo(models.Planet, {
