@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #333;
   margin: 0;
   padding: 0;
@@ -166,6 +165,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 .welcome-block .cosmos .star {
@@ -247,7 +247,7 @@ ul {
   left: 5%;
   opacity: 0;
   animation: flying-star9 3s linear infinite;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 .welcome-block .cosmos .star:nth-child(10) {
@@ -280,7 +280,6 @@ ul {
   opacity: 0;
   animation: flying-star13 3s linear infinite;
   animation-delay: -2s;
-
 }
 
 .welcome-block .cosmos .star:nth-child(14) {
@@ -345,7 +344,7 @@ ul {
   left: 85%;
   opacity: 0;
   animation: flying-star21 3s linear infinite;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .welcome-block .cosmos .star:nth-child(22) {
@@ -881,7 +880,6 @@ ul {
   }
 }
 
-
 @keyframes flying-star24 {
   0% {
     top: 4%;
@@ -913,7 +911,9 @@ ul {
   left: 0;
   opacity: 0;
   content: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg");
-  animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) .5s 1 forwards, rocket-rotate 5s linear 20s infinite;
+  animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards,
+    rocket-rotate 5s linear 20s infinite;
+  user-select: none;
 }
 
 @keyframes rocket-flying-off {
@@ -966,7 +966,7 @@ ul {
   color: aliceblue;
   padding: 20px 10px;
   border-radius: 20px;
-  box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, .3);
+  box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
 }
 
 .welcome-block #welcome-title h2 {
@@ -988,13 +988,12 @@ ul {
   border-top: 30px solid #333;
 }
 
-.about-block>video {
+.about-block > video {
   margin: 50px auto 50px 15%;
   max-width: 70%;
   border-radius: 20px;
   box-shadow: 0px 0px 6px 5px #03a8f46b;
 }
-
 
 .about-block-container {
   display: flex;
@@ -1046,7 +1045,7 @@ ul {
 }
 
 .about-block-container .about-planets {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   background: #fff;
   min-height: 300px;
   min-width: 300px;
@@ -1086,12 +1085,16 @@ ul {
   border-radius: 20px;
 }
 
-.planets-modal>* {
+.planets-modal .modal-image {
+  user-select: none;
+}
+
+.planets-modal > * {
   padding: auto;
   margin: auto;
 }
 
-.planets-modal>* img {
+.planets-modal > * img {
   width: 300px;
 }
 
@@ -1113,6 +1116,7 @@ ul {
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
+  user-select: none;
 }
 
 .planets-solar-system .sun {
@@ -1147,7 +1151,6 @@ ul {
   position: absolute;
   border-radius: 50%;
 }
-
 
 .planets-solar-system .orbit4 {
   width: 60%;
@@ -1202,13 +1205,13 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .sun>* {
+.planets-solar-system .sun > * {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.planets-solar-system .sun>* img {
+.planets-solar-system .sun > * img {
   width: 90%;
 }
 
@@ -1240,7 +1243,7 @@ ul {
 }
 
 .planets-solar-system .sun .moon {
-  animation: spin 20s linear -4.9s infinite
+  animation: spin 20s linear -4.9s infinite;
 }
 
 .planets-solar-system .sun .moon img {
@@ -1303,8 +1306,6 @@ ul {
   top: -360px;
 }
 
-
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -1321,7 +1322,12 @@ ul {
   min-height: 600px;
   border-top: 10px solid #3eacd1;
   background: rgb(253, 199, 163);
-  background: radial-gradient(circle, rgba(253, 199, 163, 1) 24%, rgba(245, 184, 225, 1) 52%, rgba(144, 154, 242, 1) 87%);
+  background: radial-gradient(
+    circle,
+    rgba(253, 199, 163, 1) 24%,
+    rgba(245, 184, 225, 1) 52%,
+    rgba(144, 154, 242, 1) 87%
+  );
 }
 
 .rockets-block-container {
@@ -1333,7 +1339,6 @@ ul {
 .rockets-block-container .card {
   max-width: 20%;
 }
-
 
 .rockets-block .header h2 {
   color: #fff;
@@ -1352,7 +1357,11 @@ ul {
   min-height: 600px;
   border-top: 10px solid #3eacd1;
   background: rgb(51, 51, 51);
-  background: radial-gradient(circle, rgba(51, 51, 51, 1) 62%, rgba(144, 154, 242, 0.2833727240896359) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(51, 51, 51, 1) 62%,
+    rgba(144, 154, 242, 0.2833727240896359) 100%
+  );
 }
 
 .launch-sites-block .header h2 {
@@ -1386,7 +1395,6 @@ ul {
   background: #333;
   color: #fff;
   text-align: center;
-
 }
 
 .ready-block .ready-button {
@@ -1400,7 +1408,6 @@ ul {
 
 .ready-block .ready-button:hover {
   animation: button-gradient-animation 4s linear 0s infinite;
-
 }
 
 @keyframes button-gradient-animation {
@@ -1419,9 +1426,6 @@ ul {
 
 /* ----------------------- */
 
-
-
-
 /* ----------------------- */
 /* ----------------------- */
 /* ----------------------- */
@@ -1437,7 +1441,7 @@ ul {
 }
 
 .easter-gif-signup {
-  animation: gif-appear 3s linear 3s 1 forwards
+  animation: gif-appear 3s linear 3s 1 forwards;
 }
 
 @keyframes gif-appear {
@@ -1500,13 +1504,13 @@ ul {
   flex-direction: column;
 }
 
-.login-signup-block .card form .login-field-block>* {
+.login-signup-block .card form .login-field-block > * {
   margin: 10px auto;
   padding: 5px;
   text-align: center;
 }
 
-.login-signup-block .card form .password-field-block>* {
+.login-signup-block .card form .password-field-block > * {
   margin: 10px auto;
   padding: 5px;
   text-align: center;
@@ -1515,12 +1519,16 @@ ul {
 .login-signup-button {
   padding: 20px;
   text-align: center;
-  background: rgb(255, 53, 189, .2);
-  background: linear-gradient(90deg, rgba(144, 154, 242, .2) 23%, rgba(255, 53, 189, .2) 52%, rgba(144, 154, 242, .2) 80%);
+  background: rgb(255, 53, 189, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(144, 154, 242, 0.2) 23%,
+    rgba(255, 53, 189, 0.2) 52%,
+    rgba(144, 154, 242, 0.2) 80%
+  );
   background-size: 200%;
   text-transform: uppercase;
   box-sizing: border-box;
-
 }
 
 .login-signup-button:hover {
@@ -1529,7 +1537,7 @@ ul {
 
 .login-signup-button:active {
   filter: brightness(0.3);
-  transition: .1s;
+  transition: 0.1s;
 }
 
 @keyframes button-gradient-animation2 {
@@ -1579,7 +1587,7 @@ ul {
 
 .navbar-block ul li:hover {
   background: rgba(51, 51, 51, 0.089);
-  transition: .1s;
+  transition: 0.1s;
 }
 
 /* ----------------------- */
@@ -1593,7 +1601,6 @@ ul {
 .dashboard-block .header {
   color: #fff;
   text-shadow: 0 0 3px #fff, 0 0 3px #fff;
-
 }
 
 .dashboard-block .line-break {
@@ -1611,7 +1618,7 @@ ul {
 
 .menu-block button {
   font-weight: bold;
-  color: rgb(212, 212, 212)
+  color: rgb(212, 212, 212);
 }
 
 .expeditions-block button {
@@ -1623,7 +1630,11 @@ ul {
 .expeditions-block .login-signup-button {
   text-align: center;
   background: rgba(255, 53, 188, 0.555);
-  background: linear-gradient(90deg, rgba(105, 120, 255, 0.699) 23%, rgba(255, 53, 188, 0.671) 52%);
+  background: linear-gradient(
+    90deg,
+    rgba(105, 120, 255, 0.699) 23%,
+    rgba(255, 53, 188, 0.671) 52%
+  );
   background-size: 200%;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -1654,26 +1665,26 @@ table th {
 table tbody td {
   font-size: 1.3em;
   font-weight: normal;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 2px solid #fff;
 }
 
 table td:nth-child(even) {
-  background: #398AA4;
+  background: #398aa4;
   border: 2px solid #555555;
 }
 
 table thead {
-  background: #398AA4;
+  background: #398aa4;
   border-bottom: 10px solid #fff;
 }
 
 table thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: left;
-  border-left: 2px solid #398AA4;
+  border-left: 2px solid #398aa4;
 }
 
 table thead th:first-child {
@@ -1690,8 +1701,8 @@ table tfoot .links {
 
 table tfoot .links a {
   display: inline-block;
-  background: #FFFFFF;
-  color: #398AA4;
+  background: #ffffff;
+  color: #398aa4;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -1720,8 +1731,13 @@ table tfoot .links a {
 
 #choose-planet {
   padding: 15px 25px;
-  background: rgb(255, 53, 189, .2);
-  background: linear-gradient(90deg, rgba(144, 154, 242, .2) 23%, rgba(255, 53, 189, .2) 52%, rgba(144, 154, 242, .2) 80%);
+  background: rgb(255, 53, 189, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(144, 154, 242, 0.2) 23%,
+    rgba(255, 53, 189, 0.2) 52%,
+    rgba(144, 154, 242, 0.2) 80%
+  );
   background-size: 200%;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -1754,7 +1770,6 @@ table tfoot .links a {
   border-radius: 10px;
 }
 
-
 /* ----------------------- */
 /* ----------------------- */
 /* TIMESTAMP */
@@ -1782,7 +1797,12 @@ input#timestamp {
 
 form#timestamp-form button {
   margin-top: 50px;
-  background: linear-gradient(90deg, rgba(137, 255, 174, 1) 10%, rgba(163, 171, 249, 1) 50%, rgba(137, 255, 174, 1) 90%);
+  background: linear-gradient(
+    90deg,
+    rgba(137, 255, 174, 1) 10%,
+    rgba(163, 171, 249, 1) 50%,
+    rgba(137, 255, 174, 1) 90%
+  );
   height: 150px;
   color: #fff;
   font-weight: bold;
@@ -1797,7 +1817,6 @@ form#timestamp-form button {
 
 form#timestamp-form button:hover {
   animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
-
 }
 
 @keyframes final-submit-button-gradient-animation {
@@ -1811,7 +1830,6 @@ form#timestamp-form button:hover {
 
   to {
     box-shadow: 0px 0px 10px 10px #7cffb7;
-
   }
 }
 
