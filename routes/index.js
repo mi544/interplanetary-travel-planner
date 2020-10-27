@@ -48,7 +48,10 @@ router.post("/api/add/planet/:planetId", async (req, res) => {
     // get the planet passed to get the id
     const parsedPlanetId = Number(req.params.planetId);
     // if Earth then ask again (no flights to Earth)
-    if ((await db.Planet.findOne({ where: { id: parsedPlanetId } })).dataValues.name === "Earth") {
+    if (
+      (await db.Planet.findOne({ where: { id: parsedPlanetId } })).dataValues.name ===
+      "Earth"
+    ) {
       res.redirect("/expedition");
       return;
     }
@@ -106,7 +109,10 @@ router.delete("/api/delete/amenity/:amenityId", async (req, res) => {
 router.post("/api/amenity/finalize", (req, res) => {
   console.log("finalize amenities post");
   // finalize amenities
-  db.FlightInProgress.update({ amenitiesFinalized: 1 }, { where: { UserId: req.user.id } })
+  db.FlightInProgress.update(
+    { amenitiesFinalized: 1 },
+    { where: { UserId: req.user.id } }
+  )
     .then(result => res.json(result))
     .catch(err => console.log(err));
 });

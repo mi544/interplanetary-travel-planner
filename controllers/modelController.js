@@ -26,7 +26,12 @@ module.exports = {
         where: {
           UserId: Number(req.params.id)
         },
-        include: [db.Planet, db.User, { model: db.Rocket, include: db.Company }, db.Amenity]
+        include: [
+          db.Planet,
+          db.User,
+          { model: db.Rocket, include: db.Company },
+          db.Amenity
+        ]
       })
         .then(data => {
           console.log(data);
