@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
     // },
     operatedBy: {
       type: DataTypes.STRING,
-      allowNull:false
+      allowNull: false
     }
   });
   return launchSite;

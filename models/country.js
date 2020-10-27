@@ -7,7 +7,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Country.associate = function (models) {
-
     Country.hasMany(models.Company, {
       onDelete: "cascade"
     });

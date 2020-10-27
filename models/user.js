@@ -15,7 +15,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   User.associate = function (models) {
-
     User.hasMany(models.Flight, {
       foreignKey: {
         allowNull: false
@@ -25,7 +24,6 @@ module.exports = function (sequelize, DataTypes) {
     User.hasOne(models.FlightInProgress, {
       foreignKey: {}
     });
-
   };
 
   return User;

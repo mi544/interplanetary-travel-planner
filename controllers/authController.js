@@ -29,10 +29,12 @@ module.exports = {
     db.Flight.findAll({
       where: { UserId: Number(req.user.id) },
       include: [db.Planet, db.User, db.Rocket, db.Amenity]
-    }).then(data => {
-      console.log(typeof data);
-      res.render("dashboard", { flights: data });
-    }).catch(err => console.log(err));
+    })
+      .then(data => {
+        console.log(typeof data);
+        res.render("dashboard", { flights: data });
+      })
+      .catch(err => console.log(err));
 
     // res.render("dashboard", {
     //   email: req.user.email,
@@ -60,24 +62,44 @@ module.exports = {
       // getting all available rockets
       const rockets = await db.Rocket.findAll();
       res.render("expedition/choose-rocket", { rockets });
-    } else if (inProgress.dataValues.PlanetId && inProgress.dataValues.RocketId && !inProgress.dataValues.AmenityId) {
+    } else if (
+      inProgress.dataValues.PlanetId &&
+      inProgress.dataValues.RocketId &&
+      !inProgress.dataValues.AmenityId
+    ) {
       // Planet and Rocket (but not finalized Amenities) -> Amenities
       console.log("4th block");
       // getting all available amenities
       const amenities = await db.Amenity.findAll();
       res.render("expedition/choose-amenities", { amenities });
-    } else if (inProgress.dataValues.PlanetId && inProgress.dataValues.RocketId && inProgress.dataValues.AmenityId && !inProgress.dataValues.timestamp) {
+    } else if (
+      inProgress.dataValues.PlanetId &&
+      inProgress.dataValues.RocketId &&
+      inProgress.dataValues.AmenityId &&
+      !inProgress.dataValues.timestamp
+    ) {
       // Planet and Rocket and Amenities finalized (but no Timestamp) -> Timestamp
       console.log("5th block");
       res.render("expedition/choose-timestamp", {});
-    } else if (inProgress.dataValues.PlanetId && inProgress.dataValues.RocketId && inProgress.dataValues.AmenityId && inProgress.dataValues.timestamp) {
+    } else if (
+      inProgress.dataValues.PlanetId &&
+      inProgress.dataValues.RocketId &&
+      inProgress.dataValues.AmenityId &&
+      inProgress.dataValues.timestamp
+    ) {
       // Planet and Rocket and Amenities finalized and Timestamp -> 1b
       console.log("5th block");
 
       const massagedData = {
-        arrivalTimeEst: moment(inProgress.dataValues.timestamp, "YYYY-MM-DD HH:mm:ss").add(getRandomInt(21), "hours").add(getRandomInt(60), "minutes").add(getRandomInt(60), "seconds").format("YYYY-MM-DD HH:mm:ss"), //!w
+        arrivalTimeEst: moment(inProgress.dataValues.timestamp, "YYYY-MM-DD HH:mm:ss")
+          .add(getRandomInt(21), "hours")
+          .add(getRandomInt(60), "minutes")
+          .add(getRandomInt(60), "seconds")
+          .format("YYYY-MM-DD HH:mm:ss"), //!w
         totalCost: getRandomInt(99999999999999), //!w
-        flightNumber: inProgress.dataValues.Planet.dataValues.name.slice(0, 3).toUpperCase() + getRandomInt(1000),
+        flightNumber:
+          inProgress.dataValues.Planet.dataValues.name.slice(0, 3).toUpperCase() +
+          getRandomInt(1000),
         timestamp: inProgress.dataValues.timestamp,
         PlanetId: inProgress.dataValues.PlanetId,
         UserId: inProgress.dataValues.UserId,
