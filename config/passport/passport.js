@@ -21,71 +21,83 @@ module.exports = function (passport, user) {
   });
 
   // signup functionality
-  passport.use("local-signup", new LocalStrategy({
-    usernameField: "email",
-    passwordField: "password",
-    passReqToCallback: true
-  }, function (req, email, password, done) {
-    if (password.length < 8) {
-      return done(null, false, { message: "Passwords must be at least 8 characters long" });
-    }
+  passport.use(
+    "local-signup",
+    new LocalStrategy(
+      {
+        usernameField: "email",
+        passwordField: "password",
+        passReqToCallback: true
+      },
+      function (req, email, password, done) {
+        if (password.length < 8) {
+          return done(null, false, { message: "Passwords must be at least 8 characters long" });
+        }
 
-    const generateHash = function (password) {
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(process.env.SALT_NUM), null);
-    };
-
-    User.findOne({ where: { email: email } }).then(function (user) {
-      if (user) {
-        return done(null, false, { message: "Email address already in use" });
-      } else if (password !== req.body.password2) {
-        return done(null, false, { message: "Passwords do not match" });
-      } else {
-        const userPassword = generateHash(password);
-        const data = {
-          email: email,
-          password: userPassword
+        const generateHash = function (password) {
+          return bcrypt.hashSync(password, bcrypt.genSaltSync(process.env.SALT_NUM), null);
         };
 
-        User.create(data).then(function (newUser, created) {
-          if (!newUser) {
-            return done(null, false);
-          }
+        User.findOne({ where: { email: email } }).then(function (user) {
+          if (user) {
+            return done(null, false, { message: "Email address already in use" });
+          } else if (password !== req.body.password2) {
+            return done(null, false, { message: "Passwords do not match" });
+          } else {
+            const userPassword = generateHash(password);
+            const data = {
+              email: email,
+              password: userPassword
+            };
 
-          if (newUser) {
-            return done(null, newUser);
+            User.create(data).then(function (newUser, created) {
+              if (!newUser) {
+                return done(null, false);
+              }
+
+              if (newUser) {
+                return done(null, newUser);
+              }
+            });
           }
         });
       }
-    });
-  }));
+    )
+  );
 
   // login functionality
-  passport.use("local-login", new LocalStrategy({
-    // (by default, localStrategy uses username and password; we're overriding with email)
-    usernameField: "email",
-    passwordField: "password",
-    passReqToCallback: true
-  }, function (req, email, password, done) {
-    const User = user;
-    const isValidPassword = function (password, userpw) {
-      return bcrypt.compareSync(password, userpw);
-    };
+  passport.use(
+    "local-login",
+    new LocalStrategy(
+      {
+        // (by default, localStrategy uses username and password; we're overriding with email)
+        usernameField: "email",
+        passwordField: "password",
+        passReqToCallback: true
+      },
+      function (req, email, password, done) {
+        const User = user;
+        const isValidPassword = function (password, userpw) {
+          return bcrypt.compareSync(password, userpw);
+        };
 
-    User.findOne({ where: { email: email } })
-      .then(function (user) {
-        if (!user) {
-          return done(null, false, { message: "No matching email" });
-        }
+        User.findOne({ where: { email: email } })
+          .then(function (user) {
+            if (!user) {
+              return done(null, false, { message: "No matching email" });
+            }
 
-        if (!isValidPassword(password, user.password)) {
-          return done(null, false, { message: "Incorrect password" });
-        }
+            if (!isValidPassword(password, user.password)) {
+              return done(null, false, { message: "Incorrect password" });
+            }
 
-        const userinfo = user.get();
-        return done(null, userinfo);
-      }).catch(function (err) {
-        return done(null, false, { message: "Something went wrong with your login" });
-      });
-  }));
-
+            const userinfo = user.get();
+            return done(null, userinfo);
+          })
+          .catch(function (err) {
+            return done(null, false, { message: "Something went wrong with your login" });
+          });
+      }
+    )
+  );
 };

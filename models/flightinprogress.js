@@ -1,27 +1,25 @@
 module.exports = function (sequelize, DataTypes) {
   const FlightInProgress = sequelize.define("FlightInProgress", {
     arrivalTimeEst: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     },
     totalCost: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.BIGINT
     },
     flightNumber: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     timestamp: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     },
     amenitiesFinalized: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN
     }
   });
 
   FlightInProgress.associate = function (models) {
-
-    FlightInProgress.belongsToMany(models.Amenity, {
-      through: "FlightsAmenities"
-
+    FlightInProgress.belongsTo(models.Amenity, {
+      foreignKey: {}
     });
 
     FlightInProgress.belongsTo(models.Planet, {

@@ -3,7 +3,6 @@ const db = require("../models");
 module.exports = {
   findAmenities: (req, res) => {
     db.Amenity.findAll().then(data => res.json(data));
-
   },
 
   findPlanets: (req, res) => {
@@ -28,12 +27,14 @@ module.exports = {
           UserId: Number(req.params.id)
         },
         include: [db.Planet, db.User, { model: db.Rocket, include: db.Company }, db.Amenity]
-      }).then(data => {
-        console.log(data);
-        res.json(data);
-      }).catch(err => {
-        throw err;
-      });
+      })
+        .then(data => {
+          console.log(data);
+          res.json(data);
+        })
+        .catch(err => {
+          throw err;
+        });
     } else {
       res.status(401).end();
     }

@@ -21,23 +21,30 @@ router.get("/logout", authController.logout);
 router.get("/dashboard", isLoggedIn, authController.dashboard);
 router.get("/expedition", isLoggedIn, isInProgress, authController.expedition);
 
-router.post("/signup", passport.authenticate("local-signup", {
-  successRedirect: "/dashboard",
-  failureRedirect: "/signup",
-  failureFlash: true
-}));
+router.post(
+  "/signup",
+  passport.authenticate("local-signup", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/signup",
+    failureFlash: true
+  })
+);
 
-router.post("/login", passport.authenticate("local-login", {
-  successRedirect: "/dashboard",
-  failureRedirect: "/login",
-  failureFlash: true
-}));
+router.post(
+  "/login",
+  passport.authenticate("local-login", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/login",
+    failureFlash: true
+  })
+);
 
 router.post("/api/add/planet/:planetId", async (req, res) => {
   try {
     console.log("planet post");
     // if no row exists for the user create one
-    if (!await db.FlightInProgress.findOne({ where: { UserId: req.user.id } })) await db.FlightInProgress.create({ UserId: req.user.id });
+    if (!(await db.FlightInProgress.findOne({ where: { UserId: req.user.id } })))
+      await db.FlightInProgress.create({ UserId: req.user.id });
     // get the planet passed to get the id
     const parsedPlanetId = Number(req.params.planetId);
     // if Earth then ask again (no flights to Earth)
@@ -46,9 +53,14 @@ router.post("/api/add/planet/:planetId", async (req, res) => {
       return;
     }
     // update the object
-    const result = await db.FlightInProgress.update({ PlanetId: parsedPlanetId }, { where: { UserId: req.user.id } });
+    const result = await db.FlightInProgress.update(
+      { PlanetId: parsedPlanetId },
+      { where: { UserId: req.user.id } }
+    );
     res.json(result);
-  } catch (err) { console.log(err); }
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.post("/api/add/rocket/:rocketId", async (req, res) => {
@@ -56,12 +68,10 @@ router.post("/api/add/rocket/:rocketId", async (req, res) => {
   // assign id to parsedRocketId
   const parsedRocketId = req.params.rocketId;
   // update the object
-  const result = await db.FlightInProgress.update({ RocketId: parsedRocketId }, { where: { UserId: req.user.id } });
-  // result.addAmenities([1, 4, 5]);
-  const superResult = await db.FlightInProgress.findOne({ where: { UserId: req.user.id } });
-  console.log("123123\n\n\n\n\n", Object.keys(superResult));
-  console.log(superResult.__proto__);
-  superResult.addAmenities([1, 4, 5]);
+  const result = await db.FlightInProgress.update(
+    { RocketId: parsedRocketId },
+    { where: { UserId: req.user.id } }
+  );
   res.json(result);
 });
 
@@ -70,7 +80,10 @@ router.post("/api/add/amenity/:amenityId", async (req, res) => {
   // assign id to parsedAmenityId
   const parsedAmenityId = req.params.amenityId;
   // update the object
-  const result = await db.FlightInProgress.update({ AmenityId: parsedAmenityId }, { where: { UserId: req.user.id } });
+  const result = await db.FlightInProgress.update(
+    { AmenityId: parsedAmenityId },
+    { where: { UserId: req.user.id } }
+  );
   res.json(result);
 });
 
@@ -85,7 +98,6 @@ router.delete("/api/delete/amenity/:amenityId", async (req, res) => {
   // update the object
   // await db.FlightInProgress.update({ RocketId: parsedRocketId }, { where: { UserId: req.user.id } });
 
-
   //return in a post the whole database to see what amenities are added
 
   res.end();
@@ -95,19 +107,20 @@ router.post("/api/amenity/finalize", (req, res) => {
   console.log("finalize amenities post");
   // finalize amenities
   db.FlightInProgress.update({ amenitiesFinalized: 1 }, { where: { UserId: req.user.id } })
-    .then((result) => res.json(result))
-    .catch((err) => console.log(err));
+    .then(result => res.json(result))
+    .catch(err => console.log(err));
 });
 
 router.post("/api/add/timestamp", async (req, res) => {
   console.log("timestamp post");
   console.log(req.body);
   // update the object
-  const result = await db.FlightInProgress.update({ timestamp: req.body.timestamp }, { where: { UserId: req.user.id } });
+  const result = await db.FlightInProgress.update(
+    { timestamp: req.body.timestamp },
+    { where: { UserId: req.user.id } }
+  );
   res.redirect("/expedition");
 });
-
-
 
 router.get("/api/reset", async (req, res) => {
   console.log("get reset");

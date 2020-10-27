@@ -24,7 +24,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Rocket.associate = function (models) {
-
     Rocket.belongsTo(models.Company, {
       foreignKey: {
         allowNull: false
@@ -42,7 +41,6 @@ module.exports = function (sequelize, DataTypes) {
     Rocket.hasMany(models.FlightInProgress, {
       onDelete: "cascade"
     });
-
   };
 
   return Rocket;
