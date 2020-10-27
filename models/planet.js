@@ -11,14 +11,13 @@ module.exports = function (sequelize, DataTypes) {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     }
   });
-
 
   Planet.associate = function (models) {
     Planet.hasMany(models.Flight, {

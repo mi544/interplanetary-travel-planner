@@ -41,7 +41,8 @@ app.use(function (req, res, next) {
 app.use(routes);
 
 // sync w/database
-db.sequelize.sync({ force: false })
+db.sequelize
+  .sync({ force: false })
   .then(() => {
     app.listen(PORT, function (err) {
       if (err) {
@@ -50,6 +51,7 @@ db.sequelize.sync({ force: false })
 
       console.log(`Server now running on http://localhost:${PORT}!`);
     });
-  }).catch(err => {
+  })
+  .catch(err => {
     console.log(err, "Something went wrong with the db sync!");
   });

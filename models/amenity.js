@@ -15,7 +15,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Amenity.associate = function (models) {
-
     Amenity.hasOne(models.Flight, {
       foreignKey: {
         allowNull: false
