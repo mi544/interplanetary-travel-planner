@@ -33,7 +33,6 @@
     <h2>Space Flights With Us</h2>
   </div>
 </div>
-
 <div class="about-block">
   <video controls src="/assets/video/this_is_the_video.mp4"></video>
   <div class="about-block-container">
@@ -62,11 +61,9 @@
           choose from and amazing travel amenities that can be tailored to your individual comfort level, there's no
           destination beyond our reach within our Solar System.</p>
       </div>
-
     </div>
   </div>
 </div>
-
 <div class="planets-block">
   <div class="planets-modal">
     <div class="modal-image"><img id="planet-portrait" src="assets/images/planets/earth.png" alt="earth"></div>
@@ -81,9 +78,6 @@
       </p>
     </div>
   </div>
-
-
-
   <div class="planets-solar-system">
     <div class="orbit1"></div>
     <div class="orbit2"></div>
@@ -140,7 +134,6 @@
       </div>
       <div class="card-image"><img src="https://spacenews.com/wp-content/uploads/2014/11/Falcon9_SpaceX02-427x485.jpg"
           alt="falcon rocket"></div>
-
       <div class="line-break"></div>
       <div class="card-text">SpaceX rockets <br />(bring your Tesla with you!) </div>
     </div>
@@ -162,13 +155,10 @@
     </div>
   </div>
 </div>
-
 <div class="launch-sites-block">
-
   <div class="header">
     <h2>Welcome to our launch sites!</h2>
   </div>
-
   <div class="launch-site-container">
     <div class="row">
       <div class="card">
@@ -187,7 +177,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="card">
         <div class="card-title">
@@ -196,7 +185,6 @@
         <div class="card-image"><img src="/assets/images/colorado-launch-site.jpg" alt="Colorado Air and Space Port">
         </div>
       </div>
-
       <div class="card">
         <div class="card-title">
           Colorado Air and Space Port
@@ -207,7 +195,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="card">
         <div class="card-title">
@@ -224,14 +211,29 @@
     </div>
   </div>
 </div>
-
 <div class="ready-block">
   <div class="header">All systems are go! <br />Are you ready for blast off?</div>
   <form action="/dashboard">
-    <button type="submit" class="ready-button header">To infinity and beyond!</input></form>
+    <button type="submit" id="infinityButton" class="ready-button header">To infinity and beyond!</input></form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+  let timer = null
+  const infBtn = document.querySelector("#infinityButton");
+  infBtn.addEventListener("mouseenter", async function () {
+    infBtn.classList.remove("run-animation")
+    await new Promise(resolve => setTimeout(resolve, 25))
+    infBtn.classList.add("run-animation")
+    timer = setInterval(async () => {
+      console.log(1)
+      infBtn.classList.remove("run-animation")
+      await new Promise(resolve => setTimeout(resolve, 25))
+      infBtn.classList.add("run-animation")
+    }, 4000)
+  })
+  infBtn.addEventListener("mouseleave", function () {
+    clearInterval(timer)
+  })
   $.get("/api/planets")
     .then(function (data) {
       $("img").on("click", function () {
