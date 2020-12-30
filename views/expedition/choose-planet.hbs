@@ -23,9 +23,6 @@
       </div>
       <button id="choose-planet">Choose the planet</button>
     </div>
-
-
-
     <div class="planets-solar-system">
       <div class="orbit1"></div>
       <div class="orbit2"></div>
@@ -70,31 +67,6 @@
       </div>
     </div>
   </div>
-
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  $.get("/api/planets")
-    .then(function (data) {
-      $("img").on("click", function () {
-        const planet = $(this).attr("alt").charAt(0).toUpperCase() + $(this).attr("alt").slice(1);
-        console.log(planet);
-        console.log(data);
-        const filteredData = data.filter(item => item.name === planet);
-        $("#planet-info").text(filteredData[0].description);
-        $("#planet-title").text(filteredData[0].name);
-        $("#planet-portrait").attr({ src: filteredData[0].image, alt: filteredData[0].name });
-        $("#choose-planet").attr("data-planet-id", filteredData[0].id);
-      });
-    });
-
-  $("#choose-planet").on("click", function () {
-    if (!$(this).data("planet-id")) return;
-    const planetId = Number($(this).data("planet-id"));
-    $.post(`/api/add/planet/${planetId}`).then(() => {
-      setTimeout(function () { location.reload(true) }, 100);
-    }).catch(err => console.log(err));
-  })
-</script>
+<script src="/assets/js/planets.js"></script>
+<script src="/assets/js/expedition-configuration/planet.js"></script>

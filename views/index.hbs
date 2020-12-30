@@ -214,36 +214,8 @@
 <div class="ready-block">
   <div class="header">All systems are go! <br />Are you ready for blast off?</div>
   <form action="/dashboard">
-    <button type="submit" id="infinityButton" class="ready-button header">To infinity and beyond!</input></form>
+    <button type="submit" id="infinityButton" class="ready-button header">To infinity and beyond!</input>
+  </form>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  let timer = null
-  const infBtn = document.querySelector("#infinityButton");
-  infBtn.addEventListener("mouseenter", async function () {
-    infBtn.classList.remove("run-animation")
-    await new Promise(resolve => setTimeout(resolve, 25))
-    infBtn.classList.add("run-animation")
-    timer = setInterval(async () => {
-      console.log(1)
-      infBtn.classList.remove("run-animation")
-      await new Promise(resolve => setTimeout(resolve, 25))
-      infBtn.classList.add("run-animation")
-    }, 4000)
-  })
-  infBtn.addEventListener("mouseleave", function () {
-    clearInterval(timer)
-  })
-  $.get("/api/planets")
-    .then(function (data) {
-      $("img").on("click", function () {
-        const planet = $(this).attr("alt").charAt(0).toUpperCase() + $(this).attr("alt").slice(1);
-        console.log(planet);
-        console.log(data);
-        const filteredData = data.filter(item => item.name === planet);
-        $("#planet-info").text(filteredData[0].description);
-        $("#planet-title").text(filteredData[0].name);
-        $("#planet-portrait").attr({ src: filteredData[0].image, alt: filteredData[0].name });
-      });
-    });
-</script>
+<script src="/assets/js/button-animation.js"></script>
+<script src="/assets/js/planets.js"></script>

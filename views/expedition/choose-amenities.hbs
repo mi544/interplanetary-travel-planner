@@ -11,7 +11,6 @@
         <h3>Expedition</h3>
     </div>
     <div class="line-break"></div>
-
     <div class="expeditions-block">
         <table>
             <thead>
@@ -23,44 +22,14 @@
             </thead>
             <tbody>
                 {{#each amenities}}
-                <tr>
-                    <td>{{ dataValues.name }}</td>
-                    <td>${{ dataValues.cost }} </td>
-                    <td><button data-add data-amenity-id={{ dataValues.id }}>Choose</button></td>
-                </tr>
+                    <tr>
+                        <td>{{ dataValues.name }}</td>
+                        <td>${{ dataValues.cost }} </td>
+                        <td><button data-add data-amenity-id={{ dataValues.id }}>Choose</button></td>
+                    </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    //    $("[data-delete]").on("click", function () {
-    //        const amenityId = $(this).data("amenity-id");
-    //        console.log(amenityId);
-    //        $.ajax(`/api/delete/amenity/${amenityId}`, {
-    //            type: "DELETE"
-    //        }).then((result) => {
-    //            setTimeout(function () { location.reload(true); console.log(result) }, 5000);
-    //        }).catch(err => console.log(err));
-    //    });
-
-    $("[data-add]").on("click", function () {
-        const amenityId = $(this).data("amenity-id");
-        console.log(amenityId);
-        $.ajax(`/api/add/amenity/${amenityId}`, {
-            type: "POST"
-        }).then((result) => {
-            setTimeout(function () { location.reload(true); console.log(result) }, 100);
-        }).catch(err => console.log(err));
-    });
-
-//    $("[data-finalize]").on("click", function () {
-//        $.ajax(`/api/amenity/finalize`, {
-//            type: "POST"
-//        }).then((result) => {
-//            setTimeout(function () { location.reload(true); console.log(result) }, 5000);
-//        }).catch(err => console.log(err));
-//    }); 
-</script>
+<script src="/assets/js/expedition-configuration/amenities.js"></script>
