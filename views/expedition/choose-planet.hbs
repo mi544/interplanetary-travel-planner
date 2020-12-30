@@ -68,18 +68,5 @@
     </div>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/assets/js/planets.js"></script>
-<script>
-  document.querySelector("#choose-planet").addEventListener("click", function (e) {
-    if (!e.target.dataset.planetId) return;
-    const planetId = Number(this.dataset.planetId);
-    await fetch(`/api/add/planet/${planetId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    setTimeout(function () { location.reload(true) }, 100);
-  })
-</script>
+<script src="/assets/js/expedition-configuration/planet.js"></script>
