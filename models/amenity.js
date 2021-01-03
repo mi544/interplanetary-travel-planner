@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Amenity = sequelize.define("Amenity", {
+  const Amenity = sequelize.define('Amenity', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -12,25 +12,25 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false
     }
-  });
+  })
 
   Amenity.associate = function (models) {
     Amenity.hasOne(models.Flight, {
       foreignKey: {
         allowNull: false
       }
-    });
+    })
 
     Amenity.hasOne(models.FlightInProgress, {
       foreignKey: {
         allowNull: true
       }
-    });
+    })
 
     // Amenity.belongsToMany(models.Rocket, {
     //   through: "RocketAmenities"
     // });
-  };
+  }
 
-  return Amenity;
-};
+  return Amenity
+}

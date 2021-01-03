@@ -9,7 +9,6 @@
     </div>
     <div class="line-break"></div>
 </div>
-
 <div class="expeditions-block">
     <h3 class="header">Your interplanetary expeditions:</h3>
     <table>
@@ -24,13 +23,13 @@
         </thead>
         <tbody>
             {{#each flights }}
-            <tr>
-                <td>{{ dataValues.flightNumber }}</td>
-                <td>{{ dataValues.Planet.dataValues.name }}</td>
-                <td>{{ dataValues.timestamp }}</td>
-                <td>{{ dataValues.Rocket.dataValues.name }}</td>
-                {{!-- <td>{{ @root.Rocket.name }}</td> --}}
-            </tr>
+                <tr>
+                    <td>{{ dataValues.flightNumber }}</td>
+                    <td>{{ dataValues.Planet.dataValues.name }}</td>
+                    <td>{{ dataValues.timestamp }}</td>
+                    <td>{{ dataValues.Rocket.dataValues.name }}</td>
+                    {{!-- <td>{{ @root.Rocket.name }}</td> --}}
+                </tr>
             {{/each}}
         </tbody>
     </table>

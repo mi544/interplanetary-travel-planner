@@ -8,20 +8,20 @@
 //        }).catch(err => console.log(err));
 //    });
 
-document.querySelectorAll("[data-add]").forEach(el => {
-  el.addEventListener("click", async function () {
-    const amenityId = this.dataset.amenityId;
-    await fetch(`/api/add/amenity/${amenityId}`, {
-      method: "POST"
-    });
+document.querySelectorAll('[data-add]').forEach((el) => {
+  el.addEventListener('click', async function () {
+    const amenityId = this.dataset.amenityId
+    await fetch(`/api/amenities/${amenityId}`, {
+      method: 'POST'
+    })
     setTimeout(function () {
-      location.reload();
-    }, 100);
-  });
-});
+      location.reload()
+    }, 100)
+  })
+})
 
 //    $("[data-finalize]").on("click", function () {
-//        $.ajax(`/api/amenity/finalize`, {
+//        $.ajax(`/api/amenities/finalize`, {
 //            type: "POST"
 //        }).then((result) => {
 //            setTimeout(function () { location.reload(true); console.log(result) }, 5000);
