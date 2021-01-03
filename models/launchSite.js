@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const launchSite = sequelize.define("launchSite", {
+  const launchSite = sequelize.define('launchSite', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -12,6 +12,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  });
-  return launchSite;
-};
+  })
+  return launchSite
+}

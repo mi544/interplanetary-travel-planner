@@ -1,12 +1,12 @@
-const db = require("../../models");
+const db = require('../../models')
 
 function isInProgress(req, res, next) {
   if (db.FlightInProgress.findOne({ where: { id: req.user.id } })) {
-    console.log("HOORAY");
+    console.log('HOORAY')
     // if logged in, execute next middleware
+    return next()
   }
-  return next();
-  res.redirect("/login"); // if not logged in, redirect to /login
+  res.redirect('/login') // if not logged in, redirect to /login
 }
 
-module.exports = isInProgress;
+module.exports = isInProgress

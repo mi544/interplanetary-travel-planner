@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #333;
   margin: 0;
   padding: 0;
@@ -140,7 +140,7 @@ ul {
   top: 25%;
   height: 50px;
   width: 50px;
-  background: url("/assets/images/dashboard.png");
+  background: url('/assets/images/dashboard.png');
   background-position: center;
   background-size: cover;
   margin-left: auto;
@@ -910,7 +910,7 @@ ul {
   top: 2%;
   left: 0;
   opacity: 0;
-  content: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg");
+  content: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg');
   animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards,
     rocket-rotate 5s linear 20s infinite;
   user-select: none;
@@ -981,7 +981,7 @@ ul {
   justify-content: center;
   align-items: center;
   background: rgb(201, 231, 236);
-  background: url("/assets/images/night_launch.jpg");
+  background: url('/assets/images/night_launch.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1045,7 +1045,7 @@ ul {
 }
 
 .about-block-container .about-planets {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   background: #fff;
   min-height: 300px;
   min-width: 300px;
@@ -1106,7 +1106,7 @@ ul {
   font-size: 1.5em;
 }
 
-.planets-solar-system {
+#planets-solar-system {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1119,15 +1119,7 @@ ul {
   user-select: none;
 }
 
-.planets-solar-system .sun {
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  background: yellow;
-  border-radius: 50%;
-}
-
-.planets-solar-system .orbit1 {
+#planets-solar-system #orbit1 {
   width: 25%;
   height: 25%;
   border: 5px solid rgba(255, 255, 255, 0.35);
@@ -1135,7 +1127,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit2 {
+#planets-solar-system #orbit2 {
   width: 35%;
   height: 35%;
   border: 5px solid rgba(255, 255, 255, 0.35);
@@ -1143,7 +1135,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit3 {
+#planets-solar-system #orbit3 {
   width: 49%;
   height: 49%;
   /* background-color: #a5a5a5; */
@@ -1152,7 +1144,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit4 {
+#planets-solar-system #orbit4 {
   width: 60%;
   height: 60%;
   /* background-color: #a5a5a5; */
@@ -1161,7 +1153,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit5 {
+#planets-solar-system #orbit5 {
   width: 70%;
   height: 70%;
   /* background-color: #a5a5a5; */
@@ -1170,7 +1162,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit6 {
+#planets-solar-system #orbit6 {
   width: 77%;
   height: 77%;
   /* background-color: #a5a5a5; */
@@ -1179,7 +1171,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit7 {
+#planets-solar-system #orbit7 {
   width: 84%;
   height: 84%;
   /* background-color: #a5a5a5; */
@@ -1188,7 +1180,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit8 {
+#planets-solar-system #orbit8 {
   width: 90%;
   height: 90%;
   /* background-color: #a5a5a5; */
@@ -1197,7 +1189,7 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .orbit9 {
+#planets-solar-system #orbit9 {
   width: 95%;
   height: 95%;
   /* background-color: #a5a5a5; */
@@ -1205,103 +1197,122 @@ ul {
   border-radius: 50%;
 }
 
-.planets-solar-system .sun > * {
+#planets-solar-system #sun {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  background: yellow;
+  border-radius: 50%;
+}
+
+#planets-solar-system #sun > div {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.planets-solar-system .sun > * img {
-  width: 90%;
+/* adding overlap when hovering on planets */
+#planets-solar-system #sun > div:hover {
+  z-index: 100;
 }
 
-.planets-solar-system .sun .mercury {
+#planets-solar-system #sun > div > img {
+  width: 90%;
+  transition: 0.5s;
+}
+/* enlarging planet images when hovering on them */
+
+#planets-solar-system #sun > div > img:hover {
+  width: 105%;
+}
+
+#planets-solar-system #sun #mercury {
   animation: spin 10s linear -5s infinite;
 }
 
-.planets-solar-system .sun .mercury img {
+#planets-solar-system #sun #mercury > img {
   position: absolute;
   top: -80px;
 }
 
-.planets-solar-system .sun .venus {
+#planets-solar-system #sun #venus {
   animation: spin 14s linear -2s infinite;
 }
 
-.planets-solar-system .sun .venus img {
+#planets-solar-system #sun #venus > img {
   position: absolute;
   top: -120px;
 }
 
-.planets-solar-system .sun .earth {
+#planets-solar-system #sun #earth {
   animation: spin 20s linear -5s infinite;
 }
 
-.planets-solar-system .sun .earth img {
+#planets-solar-system #sun #earth > img {
   position: absolute;
   top: -180px;
 }
 
-.planets-solar-system .sun .moon {
+#planets-solar-system #sun #moon {
   animation: spin 20s linear -4.9s infinite;
 }
 
-.planets-solar-system .sun .moon img {
+#planets-solar-system #sun #moon > img {
   position: absolute;
   width: 30%;
   top: -150px;
 }
 
-.planets-solar-system .sun .mars {
+#planets-solar-system #sun #mars {
   animation: spin 28s linear -20s infinite;
 }
 
-.planets-solar-system .sun .mars img {
+#planets-solar-system #sun #mars > img {
   position: absolute;
   top: -220px;
 }
 
-.planets-solar-system .sun .jupiter {
+#planets-solar-system #sun #jupiter {
   animation: spin 36s linear 0s infinite;
 }
 
-.planets-solar-system .sun .jupiter img {
+#planets-solar-system #sun #jupiter > img {
   position: absolute;
   top: -260px;
 }
 
-.planets-solar-system .sun .saturn {
+#planets-solar-system #sun #saturn {
   animation: spin 55s linear -49s infinite;
 }
 
-.planets-solar-system .sun .saturn img {
+#planets-solar-system #sun #saturn > img {
   position: absolute;
   top: -275px;
 }
 
-.planets-solar-system .sun .uranus {
+#planets-solar-system #sun #uranus {
   animation: spin 80s linear -30s infinite;
 }
 
-.planets-solar-system .sun .uranus img {
+#planets-solar-system #sun #uranus > img {
   position: absolute;
   top: -320px;
 }
 
-.planets-solar-system .sun .neptune {
+#planets-solar-system #sun #neptune {
   animation: spin 100s linear -3s infinite;
 }
 
-.planets-solar-system .sun .neptune img {
+#planets-solar-system #sun #neptune > img {
   position: absolute;
   top: -330px;
 }
 
-.planets-solar-system .sun .pluto {
+#planets-solar-system #sun #pluto {
   animation: spin 130s linear -80s infinite;
 }
 
-.planets-solar-system .sun .pluto img {
+#planets-solar-system #sun #pluto > img {
   position: absolute;
   top: -360px;
 }
@@ -1406,13 +1417,13 @@ ul {
   border-radius: 30px;
 }
 
-.ready-block .ready-button:hover {
-  animation: button-gradient-animation 4s linear 0s infinite;
+.ready-block .run-animation {
+  animation: button-gradient-animation 4s linear 0s 1 forwards;
 }
 
 @keyframes button-gradient-animation {
   from {
-    background-position: 0%;
+    background-position: 400%;
   }
 
   10% {
@@ -1420,7 +1431,7 @@ ul {
   }
 
   to {
-    background-position: 400%;
+    background-position: 0%;
   }
 }
 

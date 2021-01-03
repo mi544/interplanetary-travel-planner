@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Planet = sequelize.define("Planet", {
+  const Planet = sequelize.define('Planet', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,17 +17,17 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  });
+  })
 
   Planet.associate = function (models) {
     Planet.hasMany(models.Flight, {
-      onDelete: "cascade"
-    });
+      onDelete: 'cascade'
+    })
 
     Planet.hasMany(models.FlightInProgress, {
-      onDelete: "cascade"
-    });
-  };
+      onDelete: 'cascade'
+    })
+  }
 
-  return Planet;
-};
+  return Planet
+}

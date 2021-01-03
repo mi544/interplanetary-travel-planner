@@ -11,7 +11,6 @@
         <h3>Expedition</h3>
     </div>
     <div class="line-break"></div>
-
     <div class="expeditions-block">
         <table>
             <thead>
@@ -22,24 +21,13 @@
             </thead>
             <tbody>
                 {{#each rockets }}
-                <tr>
-                    <td>{{ dataValues.name }}</td>
-                    <td><button data-rocket={{ dataValues.id }}>Choose</button></td>
-                </tr>
+                    <tr>
+                        <td>{{ dataValues.name }}</td>
+                        <td><button data-rocket={{ dataValues.id }}>Choose</button></td>
+                    </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    $("button").on("click", function () {
-        const rocketId = $(this).data("rocket");
-        console.log(rocketId);
-        $.post(`/api/add/rocket/${rocketId}`)
-            .then(() => {
-                setTimeout(function () { location.reload(true) }, 100);
-            })
-            .catch(err => console.log(err));
-    });
-</script>
+<script src="/assets/js/expedition-configuration/rocket.js"></script>

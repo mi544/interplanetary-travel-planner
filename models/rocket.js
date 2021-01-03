@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Rocket = sequelize.define("Rocket", {
+  const Rocket = sequelize.define('Rocket', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,27 +21,27 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-  });
+  })
 
   Rocket.associate = function (models) {
     Rocket.belongsTo(models.Company, {
       foreignKey: {
         allowNull: false
       }
-    });
+    })
 
     // Rocket.belongsToMany(models.Amenity, {
     //   through: "rocketAmenities"
     // });
 
     Rocket.hasMany(models.Flight, {
-      onDelete: "cascade"
-    });
+      onDelete: 'cascade'
+    })
 
     Rocket.hasMany(models.FlightInProgress, {
-      onDelete: "cascade"
-    });
-  };
+      onDelete: 'cascade'
+    })
+  }
 
-  return Rocket;
-};
+  return Rocket
+}

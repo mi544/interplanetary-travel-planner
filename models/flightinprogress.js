@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const FlightInProgress = sequelize.define("FlightInProgress", {
+  const FlightInProgress = sequelize.define('FlightInProgress', {
     arrivalTimeEst: {
       type: DataTypes.DATE
     },
@@ -15,27 +15,27 @@ module.exports = function (sequelize, DataTypes) {
     amenitiesFinalized: {
       type: DataTypes.BOOLEAN
     }
-  });
+  })
 
   FlightInProgress.associate = function (models) {
     FlightInProgress.belongsTo(models.Amenity, {
       foreignKey: {}
-    });
+    })
 
     FlightInProgress.belongsTo(models.Planet, {
       foreignKey: {}
-    });
+    })
 
     FlightInProgress.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
-    });
+    })
 
     FlightInProgress.belongsTo(models.Rocket, {
       foreignKey: {}
-    });
-  };
+    })
+  }
 
-  return FlightInProgress;
-};
+  return FlightInProgress
+}

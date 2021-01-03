@@ -23,78 +23,8 @@
       </div>
       <button id="choose-planet">Choose the planet</button>
     </div>
-
-
-
-    <div class="planets-solar-system">
-      <div class="orbit1"></div>
-      <div class="orbit2"></div>
-      <div class="orbit3"></div>
-      <div class="orbit4"></div>
-      <div class="orbit5"></div>
-      <div class="orbit6"></div>
-      <div class="orbit7"></div>
-      <div class="orbit8"></div>
-      <div class="orbit9"></div>
-      <div class="sun">
-        <div class="mercury">
-          <img src="assets/images/planets/mercury.png" alt="mercury" />
-        </div>
-        <div class="venus">
-          <img src="assets/images/planets/venus.png" alt="venus" />
-        </div>
-        <div class="earth">
-          <img src="assets/images/planets/earth.png" alt="earth" />
-        </div>
-        <div class="moon">
-          <img src="assets/images/planets/moon.png" alt="moon" />
-        </div>
-        <div class="mars">
-          <img src="assets/images/planets/mars.png" alt="mars" />
-        </div>
-        <div class="jupiter">
-          <img src="assets/images/planets/jupiter.png" alt="jupiter" />
-        </div>
-        <div class="saturn">
-          <img src="assets/images/planets/saturn.png" alt="saturn" />
-        </div>
-        <div class="uranus">
-          <img src="assets/images/planets/uranus.png" alt="uranus" />
-        </div>
-        <div class="neptune">
-          <img src="assets/images/planets/neptune.png" alt="neptune" />
-        </div>
-        <div class="pluto">
-          <img src="assets/images/planets/pluto.png" alt="pluto" />
-        </div>
-      </div>
-    </div>
+    {{>planets-solar-system}}
   </div>
-
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  $.get("/api/planets")
-    .then(function (data) {
-      $("img").on("click", function () {
-        const planet = $(this).attr("alt").charAt(0).toUpperCase() + $(this).attr("alt").slice(1);
-        console.log(planet);
-        console.log(data);
-        const filteredData = data.filter(item => item.name === planet);
-        $("#planet-info").text(filteredData[0].description);
-        $("#planet-title").text(filteredData[0].name);
-        $("#planet-portrait").attr({ src: filteredData[0].image, alt: filteredData[0].name });
-        $("#choose-planet").attr("data-planet-id", filteredData[0].id);
-      });
-    });
-
-  $("#choose-planet").on("click", function () {
-    if (!$(this).data("planet-id")) return;
-    const planetId = Number($(this).data("planet-id"));
-    $.post(`/api/add/planet/${planetId}`).then(() => {
-      setTimeout(function () { location.reload(true) }, 100);
-    }).catch(err => console.log(err));
-  })
-</script>
+<script src="/assets/js/planets.js"></script>
+<script src="/assets/js/expedition-configuration/planet.js"></script>
