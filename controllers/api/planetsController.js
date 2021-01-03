@@ -6,18 +6,22 @@ module.exports = {
   },
   chooseOne: async (req, res) => {
     try {
+      const planetId = Number(req.params.id)
+
+      const progressFlight = await db.FlightInProgress.findOne({
+        where: { UserId: req.user.id }
+      })
+
       // if no row exists for the user create one
-      if (!(await db.FlightInProgress.findOne({ where: { UserId: req.user.id } }))) {
+      if (!progressFlight) {
         await db.FlightInProgress.create({ UserId: req.user.id })
       }
       // get the planet passed to get the id
-      const planetId = Number(req.params.id)
       // if Earth then ask again (no flights to Earth)
       if (
         (await db.Planet.findOne({ where: { id: planetId } })).dataValues.name === 'Earth'
       ) {
-        res.redirect('/expedition')
-        return
+        return res.redirect('/expedition')
       }
       // update the object
       const result = await db.FlightInProgress.update(
