@@ -1,24 +1,24 @@
-const db = require("../models");
+const db = require('../models')
 
 module.exports = {
   findAmenities: (req, res) => {
-    db.Amenity.findAll().then(data => res.json(data));
+    db.Amenity.findAll().then((data) => res.json(data))
   },
 
   findPlanets: (req, res) => {
-    db.Planet.findAll().then(data => res.json(data));
+    db.Planet.findAll().then((data) => res.json(data))
   },
 
   findRockets: (req, res) => {
     db.Rocket.findAll({
       include: [db.Company]
-    }).then(data => res.json(data));
+    }).then((data) => res.json(data))
   },
 
   findFlights: (req, res) => {
     if (!req.user) {
-      res.status(401).end();
-      return;
+      res.status(401).end()
+      return
     }
 
     if (req.user.id === Number(req.params.id)) {
@@ -33,15 +33,15 @@ module.exports = {
           db.Amenity
         ]
       })
-        .then(data => {
-          console.log(data);
-          res.json(data);
+        .then((data) => {
+          console.log(data)
+          res.json(data)
         })
-        .catch(err => {
-          throw err;
-        });
+        .catch((err) => {
+          throw err
+        })
     } else {
-      res.status(401).end();
+      res.status(401).end()
     }
   }
-};
+}

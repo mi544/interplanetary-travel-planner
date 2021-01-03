@@ -11,10 +11,12 @@
   "jsxBracketSameLine": false,
   "arrowParens": "always",
   "endOfLine": "auto",
-  "overrides": [{
-    "files": "*.js",
-    "options": {
-      "parser": "babel"
+  "overrides": [
+    {
+      "files": "*.js",
+      "options": {
+        "parser": "babel"
+      }
     }
-  }]
+  ]
 }

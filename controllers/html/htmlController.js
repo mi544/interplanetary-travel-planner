@@ -12,7 +12,7 @@ module.exports = {
   signup(req, res) {
     // if user is logged in, redirect to /dashboard
     if (req.user) {
-      req.flash('successMsg', "You're already logged in")
+      req.flash('successMsg', 'You\'re already logged in')
       return res.redirect('/dashboard')
     }
 
@@ -21,7 +21,7 @@ module.exports = {
   login(req, res) {
     // if user is logged in, redirect to /dashboard
     if (req.user) {
-      req.flash('successMsg', "You're already logged in")
+      req.flash('successMsg', 'You\'re already logged in')
       return res.redirect('/dashboard')
     }
 

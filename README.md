@@ -23,10 +23,10 @@ Interplanetary Travel Planner is an amazing web application with an attractive f
 
 # Authors
 
-* Maksim Verkhoturov
-* Andrew Kepson
-* Paul Ijames
-* Jeff Sherman
+- Maksim Verkhoturov
+- Andrew Kepson
+- Paul Ijames
+- Jeff Sherman
 
 ---
 
