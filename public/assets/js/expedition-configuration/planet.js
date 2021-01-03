@@ -3,7 +3,7 @@ document.querySelector('#choose-planet').addEventListener('click', async functio
     return
   }
   const planetId = Number(this.dataset.planetId)
-  await fetch(`/api/add/planet/${planetId}`, {
+  await fetch(`/api/planets/${planetId}`, {
     method: 'POST'
   })
   setTimeout(function () {

@@ -11,7 +11,7 @@
 document.querySelectorAll('[data-add]').forEach((el) => {
   el.addEventListener('click', async function () {
     const amenityId = this.dataset.amenityId
-    await fetch(`/api/add/amenity/${amenityId}`, {
+    await fetch(`/api/amenities/${amenityId}`, {
       method: 'POST'
     })
     setTimeout(function () {
@@ -21,7 +21,7 @@ document.querySelectorAll('[data-add]').forEach((el) => {
 })
 
 //    $("[data-finalize]").on("click", function () {
-//        $.ajax(`/api/amenity/finalize`, {
+//        $.ajax(`/api/amenities/finalize`, {
 //            type: "POST"
 //        }).then((result) => {
 //            setTimeout(function () { location.reload(true); console.log(result) }, 5000);
