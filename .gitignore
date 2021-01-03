@@ -1,6 +1,6 @@
 node_modules
 .DS_Store
-# .env
+.env
 .nyc_output
 coverage
 .coveralls.yml
