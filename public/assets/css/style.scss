@@ -1,41 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  &:visited {
-    color: black;
-  }
-  &:hover {
-    color: black;
-  }
-  &:active {
-    color: black;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-ul {
-  padding-inline-start: 0;
-}
+@import './global';
+@import './header';
 
 .line-break {
   height: 5px;
@@ -43,12 +10,6 @@ ul {
   border-top: 3px solid #333333;
   border-radius: 1px;
   margin: 10px auto;
-}
-
-.header {
-  text-align: center;
-  font-size: 4em;
-  margin: 20px 0;
 }
 
 .card {
@@ -111,39 +72,11 @@ ul {
   box-shadow: 0px 6px 12px 6px #75efc7;
 }
 
-/* ----------------------- */
-
-.header-container {
-  position: relative;
-  display: flex;
-  background-color: #333;
-  height: 100px;
-  border-bottom: 2px solid aquamarine;
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
-}
-
-.header-container h1 {
-  color: #fff;
-}
-
-.header-container .title-container {
-  margin: auto;
+.header {
   text-align: center;
+  font-size: 4em;
+  margin: 20px 0;
 }
-
-.header-container .dashboard-button {
-  position: absolute;
-  right: 1%;
-  top: 25%;
-  height: 50px;
-  width: 50px;
-  background: url('/assets/images/dashboard.png');
-  background-position: center;
-  background-size: cover;
-  margin-left: auto;
-}
-
-/* ----------------------- */
 
 .welcome-block {
   position: relative;

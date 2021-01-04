@@ -1,0 +1,35 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:visited {
+    color: black;
+  }
+  &:hover {
+    color: black;
+  }
+  &:active {
+    color: black;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+}
