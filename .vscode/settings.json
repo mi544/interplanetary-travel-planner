@@ -1,0 +1,12 @@
+{
+  // https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
+  "editor.formatOnSave": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": null
+    }
+  ],
+  "liveSassCompile.settings.showOutputWindow": false
+}
