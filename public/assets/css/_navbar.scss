@@ -1,0 +1,23 @@
+.navbar-block {
+  padding: 20px;
+  text-align: center;
+
+  ul {
+    margin: auto;
+    list-style: none;
+    border-top: 1px solid rgba(51, 51, 51, 0.6);
+    border-left: 1px solid rgba(51, 51, 51, 0.6);
+    border-right: 1px solid rgba(51, 51, 51, 0.6);
+
+    li {
+      background: rgba(51, 51, 51, 0.05);
+      padding: 5px;
+      border-bottom: 1px solid rgba(51, 51, 51, 0.6);
+
+      &:hover {
+        background: rgba(51, 51, 51, 0.089);
+        transition: 0.1s;
+      }
+    }
+  }
+}

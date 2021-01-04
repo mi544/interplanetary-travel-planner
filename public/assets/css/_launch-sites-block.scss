@@ -1,0 +1,33 @@
+.launch-sites-block {
+  min-height: 600px;
+  border-top: 10px solid #3eacd1;
+  background: rgb(51, 51, 51);
+  background: radial-gradient(
+    circle,
+    rgba(51, 51, 51, 1) 62%,
+    rgba(144, 154, 242, 0.2833727240896359) 100%
+  );
+
+  .header h2 {
+    color: #fff;
+    font-size: 0.9em;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+  }
+
+  .card {
+    max-width: 50%;
+  }
+}
+
+.launch-site-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1806,26 +1806,22 @@ ul {
   top: -360px;
 }
 
-.line-break {
-  height: 5px;
-  width: 80%;
-  border-top: 3px solid #333333;
-  border-radius: 1px;
-  margin: 10px auto;
-}
-
-.header {
-  text-align: center;
-  font-size: 4em;
-  margin: 20px 0;
-}
-
-/* ----------------------- */
 .rockets-block {
   min-height: 600px;
   border-top: 10px solid #3eacd1;
   background: #fdc7a3;
   background: radial-gradient(circle, #fdc7a3 24%, #f5b8e1 52%, #909af2 87%);
+}
+
+.rockets-block .header h2 {
+  color: #fff;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+}
+
+.rockets-block .header .smaller-header {
+  font-size: 0.5em;
+  margin: 20px auto;
 }
 
 .rockets-block-container {
@@ -1843,18 +1839,6 @@ ul {
   max-width: 20%;
 }
 
-.rockets-block .header h2 {
-  color: #fff;
-  font-size: 0.9em;
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff;
-}
-
-.rockets-block .header .smaller-header {
-  font-size: 0.5em;
-  margin: 20px auto;
-}
-
-/* ----------------------- */
 .launch-sites-block {
   min-height: 600px;
   border-top: 10px solid #3eacd1;
@@ -1900,29 +1884,12 @@ ul {
           align-items: center;
 }
 
-/* ----------------------- */
 .ready-block {
   min-height: 300px;
   border-top: 10px solid #3eacd1;
   background: #333;
   color: #fff;
   text-align: center;
-}
-
-.ready-block .ready-button {
-  padding: 30px;
-  text-transform: uppercase;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background: -webkit-gradient(linear, left top, right top, from(#03a9f4), color-stop(#f441a5), color-stop(#ffeb3b), to(#03a9f4));
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-  background-size: 400%;
-  border-radius: 30px;
-}
-
-.ready-block .run-animation {
-  -webkit-animation: button-gradient-animation 4s linear 0s 1 forwards;
-          animation: button-gradient-animation 4s linear 0s 1 forwards;
 }
 
 @-webkit-keyframes button-gradient-animation {
@@ -1951,25 +1918,20 @@ ul {
   }
 }
 
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* LOGIN */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-.easter-gif {
-  position: fixed;
-  left: 3%;
-  opacity: 0;
-  -webkit-animation: gif-appear 3s linear 10s 1 forwards;
-          animation: gif-appear 3s linear 10s 1 forwards;
+.ready-block .ready-button {
+  padding: 30px;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: -webkit-gradient(linear, left top, right top, from(#03a9f4), color-stop(#f441a5), color-stop(#ffeb3b), to(#03a9f4));
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
 }
 
-.easter-gif-signup {
-  -webkit-animation: gif-appear 3s linear 3s 1 forwards;
-          animation: gif-appear 3s linear 3s 1 forwards;
+.ready-block .run-animation {
+  -webkit-animation: button-gradient-animation 4s linear 0s 1 forwards;
+          animation: button-gradient-animation 4s linear 0s 1 forwards;
 }
 
 @-webkit-keyframes gif-appear {
@@ -1990,9 +1952,22 @@ ul {
   }
 }
 
+.easter-gif {
+  position: fixed;
+  left: 3%;
+  opacity: 0;
+  -webkit-animation: gif-appear 3s linear 10s 1 forwards;
+          animation: gif-appear 3s linear 10s 1 forwards;
+}
+
 .easter-gif img {
   border-radius: 20px;
   max-width: 75%;
+}
+
+.easter-gif-signup {
+  -webkit-animation: gif-appear 3s linear 3s 1 forwards;
+          animation: gif-appear 3s linear 3s 1 forwards;
 }
 
 .example {
@@ -2040,6 +2015,11 @@ ul {
   width: 90%;
 }
 
+.login-signup-block input:focus {
+  -webkit-box-shadow: 0px 3px 16px 0.5px #ea8ee8;
+          box-shadow: 0px 3px 16px 0.5px #ea8ee8;
+}
+
 .login-signup-block .card {
   padding: 0 100px 50px 100px;
 }
@@ -2060,12 +2040,6 @@ ul {
   text-align: center;
 }
 
-.login-signup-block .card form .password-field-block > * {
-  margin: 10px auto;
-  padding: 5px;
-  text-align: center;
-}
-
 .login-signup-button {
   padding: 20px;
   text-align: center;
@@ -2076,18 +2050,6 @@ ul {
   text-transform: uppercase;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.login-signup-button:hover {
-  -webkit-animation: button-gradient-animation2 10s linear 0s infinite;
-          animation: button-gradient-animation2 10s linear 0s infinite;
-}
-
-.login-signup-button:active {
-  -webkit-filter: brightness(0.3);
-          filter: brightness(0.3);
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
 }
 
 @-webkit-keyframes button-gradient-animation2 {
@@ -2116,18 +2078,18 @@ ul {
   }
 }
 
-.login-signup-block input:focus {
-  -webkit-box-shadow: 0px 3px 16px 0.5px #ea8ee8;
-          box-shadow: 0px 3px 16px 0.5px #ea8ee8;
+.login-signup-button:hover {
+  -webkit-animation: button-gradient-animation2 10s linear 0s infinite;
+          animation: button-gradient-animation2 10s linear 0s infinite;
 }
 
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* NAVBAR */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
+.login-signup-button:active {
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
 .navbar-block {
   padding: 20px;
   text-align: center;
@@ -2153,13 +2115,22 @@ ul {
   transition: 0.1s;
 }
 
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* DASHBOARD */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
+#black-line-break {
+  border-top: 2px solid #333;
+}
+
+.logout-button {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  height: 35px;
+  width: 70px;
+  background: rgba(255, 89, 89, 0.685);
+  padding: 25px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
 .dashboard-block .header {
   color: #fff;
   text-shadow: 0 0 3px #fff, 0 0 3px #fff;
@@ -2167,10 +2138,6 @@ ul {
 
 .dashboard-block .line-break {
   border-top: 2px solid #fff;
-}
-
-#black-line-break {
-  border-top: 2px solid #333;
 }
 
 .menu-block {
@@ -2193,6 +2160,11 @@ ul {
   margin: 20px;
 }
 
+.expeditions-block .header {
+  color: #fff;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+}
+
 .expeditions-block .login-signup-button {
   text-align: center;
   background: rgba(255, 53, 188, 0.555);
@@ -2202,11 +2174,6 @@ ul {
   text-transform: uppercase;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.expeditions-block .header {
-  color: #fff;
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
 }
 
 table {
@@ -2271,23 +2238,6 @@ table tfoot .links a {
   border-radius: 5px;
 }
 
-.logout-button {
-  position: absolute;
-  top: 15px;
-  right: 80px;
-  height: 35px;
-  width: 70px;
-  background: rgba(255, 89, 89, 0.685);
-  padding: 25px 10px 10px 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-/* ----------------------- */
-/* ----------------------- */
-/* CHOOSE PLANET */
-/* ----------------------- */
-/* ----------------------- */
 .expeditions-block {
   position: relative;
 }
@@ -2341,60 +2291,6 @@ table tfoot .links a {
   padding: 25px 10px 10px 10px;
   text-align: center;
   border-radius: 10px;
-}
-
-/* ----------------------- */
-/* ----------------------- */
-/* TIMESTAMP */
-/* ----------------------- */
-/* ----------------------- */
-form#timestamp-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 60%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: auto;
-}
-
-input#timestamp {
-  margin-top: 25px;
-  text-align: center;
-  height: 100px;
-  width: 300px;
-  font-size: 1.5em;
-  letter-spacing: 1px;
-  padding: 10px 20px;
-}
-
-form#timestamp-form button {
-  margin-top: 50px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #89ffae), color-stop(50%, #a3abf9), color-stop(90%, #89ffae));
-  background: linear-gradient(90deg, #89ffae 10%, #a3abf9 50%, #89ffae 90%);
-  height: 150px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-size: 400%;
-  word-wrap: break-word;
-  -webkit-animation: final-submit-button-gradient-animation 5s linear 0s infinite;
-          animation: final-submit-button-gradient-animation 5s linear 0s infinite;
-}
-
-form#timestamp-form button:hover {
-  -webkit-animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
-          animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
 }
 
 @-webkit-keyframes final-submit-button-gradient-animation {
@@ -2463,9 +2359,69 @@ form#timestamp-form button:hover {
   }
 }
 
-/* ----------------------- */
-/* SUCCESS */
-/* ----------------------- */
+#timestamp-formform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+#timestamp-formform button {
+  margin-top: 50px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #89ffae), color-stop(50%, #a3abf9), color-stop(90%, #89ffae));
+  background: linear-gradient(90deg, #89ffae 10%, #a3abf9 50%, #89ffae 90%);
+  height: 150px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-size: 400%;
+  word-wrap: break-word;
+  -webkit-animation: final-submit-button-gradient-animation 5s linear 0s infinite;
+          animation: final-submit-button-gradient-animation 5s linear 0s infinite;
+}
+
+#timestamp-formform button:hover {
+  -webkit-animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
+          animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
+}
+
+#timestampinput {
+  margin-top: 25px;
+  text-align: center;
+  height: 100px;
+  width: 300px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+}
+
+.line-break {
+  height: 5px;
+  width: 80%;
+  border-top: 3px solid #333333;
+  border-radius: 1px;
+  margin: 10px auto;
+}
+
+.header {
+  text-align: center;
+  font-size: 4em;
+  margin: 20px 0;
+}
+
 .success-block img {
   margin-left: 25%;
   padding: 5px;

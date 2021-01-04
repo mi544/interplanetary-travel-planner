@@ -1,0 +1,120 @@
+@keyframes gif-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.easter-gif {
+  position: fixed;
+  left: 3%;
+  opacity: 0;
+  animation: gif-appear 3s linear 10s 1 forwards;
+
+  img {
+    border-radius: 20px;
+    max-width: 75%;
+  }
+}
+
+.easter-gif-signup {
+  animation: gif-appear 3s linear 3s 1 forwards;
+}
+
+.example {
+  min-height: 100px;
+  min-width: 200px;
+  position: fixed;
+  right: 20%;
+  top: 50%;
+  text-align: center;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.example-header {
+  text-shadow: 0 0 5px #fff;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+.login-signup-block {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .header {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+  }
+
+  .line-break {
+    border-top: 1px solid rgba(51, 51, 51, 0.6);
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  input:focus {
+    box-shadow: 0px 3px 16px 0.5px #ea8ee8;
+  }
+
+  .card {
+    padding: 0 100px 50px 100px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .login-field-block {
+        & > * {
+          margin: 10px auto;
+          padding: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.login-signup-button {
+  @keyframes button-gradient-animation2 {
+    from {
+      background-position: 0%;
+    }
+
+    10% {
+      box-shadow: 0px 0px 10px 5px #03a8f456;
+    }
+
+    to {
+      background-position: 400%;
+    }
+  }
+
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 53, 189, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(144, 154, 242, 0.2) 23%,
+    rgba(255, 53, 189, 0.2) 52%,
+    rgba(144, 154, 242, 0.2) 80%
+  );
+  background-size: 200%;
+  text-transform: uppercase;
+  box-sizing: border-box;
+
+  &:hover {
+    animation: button-gradient-animation2 10s linear 0s infinite;
+  }
+
+  &:active {
+    filter: brightness(0.3);
+    transition: 0.1s;
+  }
+}

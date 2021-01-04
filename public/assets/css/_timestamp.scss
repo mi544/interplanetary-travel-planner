@@ -1,0 +1,77 @@
+@keyframes final-submit-button-gradient-animation {
+  from {
+    box-shadow: 0px 0px 10px 10px #7cffb7;
+  }
+
+  50% {
+    box-shadow: 0px 0px 30px 20px #7cffb7;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px 10px #7cffb7;
+  }
+}
+
+@keyframes final-submit-button-gradient-animation-hover {
+  from {
+    background-position: 0%;
+    box-shadow: 0px 0px 10px 10px #7cffb7;
+  }
+
+  50% {
+    background-position: 100%;
+    box-shadow: 0px 0px 100px 50px #7cffb7;
+  }
+
+  to {
+    background-position: 400%;
+    box-shadow: 0px 0px 10px 10px #7cffb7;
+  }
+}
+
+#timestamp-form {
+  &form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    max-width: 60%;
+    align-items: center;
+    margin: auto;
+
+    button {
+      margin-top: 50px;
+      background: linear-gradient(
+        90deg,
+        rgba(137, 255, 174, 1) 10%,
+        rgba(163, 171, 249, 1) 50%,
+        rgba(137, 255, 174, 1) 90%
+      );
+      height: 150px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      box-sizing: border-box;
+      background-size: 400%;
+      word-wrap: break-word;
+      animation: final-submit-button-gradient-animation 5s linear 0s infinite;
+
+      &:hover {
+        animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
+      }
+    }
+  }
+}
+
+#timestamp {
+  &input {
+    margin-top: 25px;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+  }
+}
