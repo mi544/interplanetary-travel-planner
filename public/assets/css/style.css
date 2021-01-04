@@ -178,20 +178,12 @@ ul {
           user-select: none;
 }
 
-.welcome-block .cosmos .star {
+.star {
   position: absolute;
   width: 20px;
   height: 20px;
   top: 50%;
   left: 50%;
-}
-
-.welcome-block .cosmos .star:nth-child(24) {
-  top: 4%;
-  left: 55%;
-  opacity: 0;
-  -webkit-animation: flying-star24 1.9s linear infinite;
-          animation: flying-star24 1.9s linear infinite;
 }
 
 @-webkit-keyframes flying-star1 {
