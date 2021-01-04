@@ -1,0 +1,74 @@
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+
+  $starsAnimations: (
+    // left side star animations
+    // topStart, leftStart, topEnd, leftEnd, duration, delay
+    1: (25%, 30%, 95%, 0%, 3s, -2s),
+    2: (9%, 30%, 85%, 0%, 3s, -1.2s),
+    3: (33%, 38%, 100%, 17%, 2.6s, 1.8s),
+    4: (7%, 22%, 100%, -12%, 3s, 3s),
+    5: (22%, 11%, 100%, -25%, 3s, 0s),
+    6: (40%, 3%, 100%, -19%, 3s, 2.7s),
+    7: (47%, 26%, 100%, 2%, 2.6s, 4.2s),
+    8: (53%, 13%, 100%, -7%, 3s, 1.6s),
+    9: (69%, 5%, 100%, -7%, 3s, 0.3s),
+    10: (79%, 32%, 100%, 25%, 2s, 5.2s),
+    11: (74%, 20%, 100%, 8%, 3s, 2.3s),
+    12: (88%, 11%, 100%, 6%, 1.9s, 0s),
+    // right side star animations
+    13: (17%, 96%, 100%, 65%, 3s, -2s),
+    14: (31%, 82%, 100%, 58%, 3s, -1.2s),
+    15: (48%, 72%, 100%, 54%, 2.6s, 1.1s),
+    16: (52%, 91%, 100%, 76%, 3s, 3s),
+    17: (79%, 96%, 100%, 91%, 3s, 0s),
+    18: (70%, 69%, 100%, 57%, 3s, 2.7s),
+    19: (81%, 55%, 100%, 49%, 2.6s, 4s),
+    20: (56%, 57%, 100%, 41%, 3s, 1.3s),
+    21: (74%, 85%, 100%, 76%, 3s, 0.2s),
+    22: (86%, 43%, 100%, 38%, 2s, 5.2s),
+    23: (7%, 74%, 100%, 43%, 3s, 2.3s),
+    24: (4%, 55%, 100%, 20%, 1.9s, 0s)
+  );
+
+  @each $starNum, $animationVals in $starsAnimations {
+    @keyframes flying-star#{$starNum} {
+      0% {
+        top: nth($animationVals, 1);
+        left: nth($animationVals, 2);
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 0;
+      }
+
+      100% {
+        top: nth($animationVals, 3);
+        left: nth($animationVals, 4);
+        opacity: 0;
+      }
+    }
+
+    &:nth-child(#{$starNum}) {
+      top: nth($animationVals, 1);
+      left: nth($animationVals, 2);
+      opacity: 0;
+      animation: flying-star#{$starNum}
+        nth($animationVals, 5)
+        linear
+        infinite
+        nth($animationVals, 6);
+      // filter: blur(1px);
+      // transform: scale(3);
+    }
+  }
+}

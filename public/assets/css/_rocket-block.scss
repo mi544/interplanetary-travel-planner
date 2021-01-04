@@ -1,0 +1,32 @@
+.rockets-block {
+  min-height: 600px;
+  border-top: 10px solid #3eacd1;
+  background: rgb(253, 199, 163);
+  background: radial-gradient(
+    circle,
+    rgba(253, 199, 163, 1) 24%,
+    rgba(245, 184, 225, 1) 52%,
+    rgba(144, 154, 242, 1) 87%
+  );
+
+  .header h2 {
+    color: #fff;
+    font-size: 0.9em;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+  }
+
+  .header .smaller-header {
+    font-size: 0.5em;
+    margin: 20px auto;
+  }
+}
+
+.rockets-block-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    max-width: 20%;
+  }
+}

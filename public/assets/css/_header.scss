@@ -1,0 +1,29 @@
+.header-container {
+  position: relative;
+  display: flex;
+  background-color: #333;
+  height: 100px;
+  border-bottom: 2px solid aquamarine;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+
+  h1 {
+    color: #fff;
+  }
+
+  .title-container {
+    margin: auto;
+    text-align: center;
+  }
+
+  .dashboard-button {
+    position: absolute;
+    right: 1%;
+    top: 25%;
+    height: 50px;
+    width: 50px;
+    background: url('/assets/images/dashboard.png');
+    background-position: center;
+    background-size: cover;
+    margin-left: auto;
+  }
+}
