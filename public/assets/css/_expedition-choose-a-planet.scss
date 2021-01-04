@@ -1,0 +1,44 @@
+.expeditions-block {
+  position: relative;
+}
+
+#choose-planet {
+  @keyframes choose-planet-gradient-animation {
+    from {
+      background-position: 0%;
+    }
+
+    10% {
+      box-shadow: 0px 0px 20px 5px #03a9f4;
+    }
+
+    to {
+      background-position: 400%;
+    }
+  }
+
+  padding: 15px 25px;
+  background: rgba(255, 53, 189, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(144, 154, 242, 0.2) 23%,
+    rgba(255, 53, 189, 0.2) 52%,
+    rgba(144, 154, 242, 0.2) 80%
+  );
+  background-size: 200%;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  animation: choose-planet-gradient-animation 4s linear 0s infinite;
+}
+
+.reset-button {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  height: 35px;
+  width: 65px;
+  background: rgb(255, 255, 255);
+  padding: 25px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+}

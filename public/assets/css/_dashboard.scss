@@ -1,0 +1,126 @@
+#black-line-break {
+  border-top: 2px solid #333;
+}
+
+.logout-button {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  height: 35px;
+  width: 70px;
+  background: rgba(255, 89, 89, 0.685);
+  padding: 25px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.dashboard-block {
+  .header {
+    color: #fff;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+  }
+
+  .line-break {
+    border-top: 2px solid #fff;
+  }
+}
+
+.menu-block {
+  display: flex;
+  justify-content: center;
+
+  button {
+    font-weight: bold;
+    color: rgb(212, 212, 212);
+  }
+}
+
+.expeditions-block {
+  button {
+    width: 80%;
+    padding: 20px 40px;
+    margin: 20px;
+  }
+
+  .header {
+    color: #fff;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  }
+
+  .login-signup-button {
+    text-align: center;
+    background: rgba(255, 53, 188, 0.555);
+    background: linear-gradient(
+      90deg,
+      rgba(105, 120, 255, 0.699) 23%,
+      rgba(255, 53, 188, 0.671) 52%
+    );
+    background-size: 200%;
+    text-transform: uppercase;
+    box-sizing: border-box;
+  }
+}
+
+table {
+  margin: auto;
+  border: 4px solid #555555;
+  background-color: #555555;
+  width: 70%;
+  min-height: 300px;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 1.3em;
+
+  td,
+  th {
+    border: 1px solid #555555;
+    padding: 5px 10px;
+  }
+
+  tbody td {
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #ffffff;
+    border: 2px solid #fff;
+  }
+
+  td:nth-child(even) {
+    background: #398aa4;
+    border: 2px solid #555555;
+  }
+
+  thead {
+    background: #398aa4;
+    border-bottom: 10px solid #fff;
+
+    th {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: left;
+      border-left: 2px solid #398aa4;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  tfoot {
+    td {
+      font-size: 13px;
+    }
+
+    .links {
+      text-align: right;
+    }
+
+    .links a {
+      display: inline-block;
+      background: #ffffff;
+      color: #398aa4;
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+  }
+}

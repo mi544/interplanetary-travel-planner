@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+
+@import './global';
+@import './header';
+@import './card';
+@import './alert';
+@import './welcome-block';
+@import './stars';
+@import './about-block';
+@import './planets-block';
+@import './rocket-block';
+@import './launch-sites-block';
+@import './ready-block';
+@import './login';
+@import './navbar';
+@import './dashboard';
+@import './expedition-choose-a-planet';
+@import './timestamp';
+
+.line-break {
+  height: 5px;
+  width: 80%;
+  border-top: 3px solid #333333;
+  border-radius: 1px;
+  margin: 10px auto;
+}
+
+.header {
+  text-align: center;
+  font-size: 4em;
+  margin: 20px 0;
+}
+
+.success-block img {
+  margin-left: 25%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px 6px #ea8ee8;
+}
