@@ -1,0 +1,140 @@
+.planets-block {
+  // background: rgb(253, 199, 163);
+  //background: radial-gradient(circle, rgba(253, 199, 163, 1) 24%, rgba(245, 184, 225, 1) 53%, rgba(144, 154, 242, 1) 87%);
+  height: 1100px;
+  min-height: 900px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.planets-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 18%;
+  min-height: 700px;
+  width: 30%;
+  max-width: 40%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 1;
+  padding: 20px;
+  border: 7px solid #3eacd1;
+  border-radius: 20px;
+
+  .modal-image {
+    user-select: none;
+  }
+
+  > * {
+    padding: auto;
+    margin: auto;
+  }
+
+  > * img {
+    width: 300px;
+  }
+
+  .modal-header h4 {
+    font-size: 3em;
+  }
+
+  .modal-text p {
+    font-size: 1.5em;
+  }
+}
+
+#planets-solar-system {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  user-select: none;
+
+  $orbits: (25%, 35%, 49%, 60%, 70%, 77%, 84%, 90%, 95%);
+
+  @for $orbitNum from 1 through 9 {
+    #orbit#{$orbitNum} {
+      width: nth($orbits, $orbitNum);
+      height: nth($orbits, $orbitNum);
+      /* background-color: #a5a5a5; */
+      border: 5px solid rgba(255, 255, 255, 0.35);
+      position: absolute;
+      border-radius: 50%;
+    }
+  }
+
+  #sun {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: yellow;
+    border-radius: 50%;
+
+    & > div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    // adding overlap when hovering on planets
+    & > div:hover {
+      z-index: 100;
+    }
+
+    & > div > img {
+      width: 90%;
+      transition: 0.5s;
+    }
+
+    // enlarging planet images when hovering on them
+    & > div > img:hover {
+      width: 105%;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    $planets: (
+      // duration, delay, topPull
+      mercury: (10s, -5s, -80px),
+      venus: (14s, -2s, -120px),
+      earth: (20s, -5s, -180px),
+      moon: (20s, -4.9s, -150px),
+      mars: (28s, -20s, -220px),
+      jupiter: (36s, -0s, -260px),
+      saturn: (55s, -49s, -275px),
+      uranus: (80s, -30s, -320px),
+      neptune: (100s, -3s, -330px),
+      pluto: (130s, -80s, -360px)
+    );
+
+    @each $planet, $planetVals in $planets {
+      ##{$planet} {
+        animation: spin nth($planetVals, 1) linear nth($planetVals, 2) infinite;
+      }
+
+      ##{$planet} > img {
+        position: absolute;
+        @if $planet == moon {
+          width: 30%;
+        }
+        top: nth($planetVals, 3);
+      }
+    }
+  }
+}

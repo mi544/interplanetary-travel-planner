@@ -1,0 +1,91 @@
+.welcome-block {
+  position: relative;
+  height: 600px;
+  background-color: black;
+  background: linear-gradient(30deg, rgba(199, 242, 249, 1) 0%, rgba(16, 19, 38, 1) 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .cosmos {
+    /* background: #333; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+  }
+
+  .rocket {
+    /* background: #333; */
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    top: 2%;
+    left: 0;
+    opacity: 0;
+    content: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg');
+    animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards,
+      rocket-rotate 5s linear 20s infinite;
+    user-select: none;
+  }
+
+  @keyframes rocket-flying-off {
+    0% {
+      top: 70%;
+      left: -35%;
+      opacity: 0;
+    }
+
+    100% {
+      top: 2%;
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rocket-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    20% {
+      transform: rotate(-5deg);
+    }
+
+    40% {
+      transform: rotate(10deg);
+    }
+
+    50% {
+      transform: rotate(-5deg);
+    }
+
+    70% {
+      transform: rotate(5deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  #welcome-title {
+    position: absolute;
+    text-align: center;
+    max-width: 17%;
+    top: 15%;
+    left: 70%;
+    background: #3eacd1;
+    color: aliceblue;
+    padding: 20px 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
+  }
+
+  #welcome-title h2 {
+    font-size: 4em;
+    text-shadow: 0 0 5px #fff;
+  }
+}

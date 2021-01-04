@@ -74,14 +74,6 @@ ul {
   margin-left: auto;
 }
 
-.line-break {
-  height: 5px;
-  width: 80%;
-  border-top: 3px solid #333333;
-  border-radius: 1px;
-  margin: 10px auto;
-}
-
 .card {
   text-align: center;
   background: #fff;
@@ -147,12 +139,6 @@ ul {
           box-shadow: 0px 6px 12px 6px #75efc7;
 }
 
-.header {
-  text-align: center;
-  font-size: 4em;
-  margin: 20px 0;
-}
-
 .welcome-block {
   position: relative;
   height: 600px;
@@ -174,6 +160,122 @@ ul {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.welcome-block .rocket {
+  /* background: #333; */
+  position: absolute;
+  width: 80%;
+  height: 600px;
+  top: 2%;
+  left: 0;
+  opacity: 0;
+  content: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg");
+  -webkit-animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards, rocket-rotate 5s linear 20s infinite;
+          animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards, rocket-rotate 5s linear 20s infinite;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@-webkit-keyframes rocket-flying-off {
+  0% {
+    top: 70%;
+    left: -35%;
+    opacity: 0;
+  }
+  100% {
+    top: 2%;
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes rocket-flying-off {
+  0% {
+    top: 70%;
+    left: -35%;
+    opacity: 0;
+  }
+  100% {
+    top: 2%;
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rocket-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  70% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rocket-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  70% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.welcome-block #welcome-title {
+  position: absolute;
+  text-align: center;
+  max-width: 17%;
+  top: 15%;
+  left: 70%;
+  background: #3eacd1;
+  color: aliceblue;
+  padding: 20px 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
+          box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
+}
+
+.welcome-block #welcome-title h2 {
+  font-size: 4em;
+  text-shadow: 0 0 5px #fff;
 }
 
 .star {
@@ -1288,123 +1390,6 @@ ul {
           animation: flying-star24 1.9s linear infinite 0s;
 }
 
-.welcome-block .rocket {
-  /* background: #333; */
-  position: absolute;
-  width: 80%;
-  height: 600px;
-  top: 2%;
-  left: 0;
-  opacity: 0;
-  content: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg");
-  -webkit-animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards, rocket-rotate 5s linear 20s infinite;
-          animation: rocket-flying-off 2.4s cubic-bezier(0.41, 0.45, 0.82, 0.69) 0.5s 1 forwards, rocket-rotate 5s linear 20s infinite;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-@-webkit-keyframes rocket-flying-off {
-  0% {
-    top: 70%;
-    left: -35%;
-    opacity: 0;
-  }
-  100% {
-    top: 2%;
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes rocket-flying-off {
-  0% {
-    top: 70%;
-    left: -35%;
-    opacity: 0;
-  }
-  100% {
-    top: 2%;
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes rocket-rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  20% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  70% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes rocket-rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  20% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  70% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-.welcome-block #welcome-title {
-  position: absolute;
-  text-align: center;
-  max-width: 17%;
-  top: 15%;
-  left: 70%;
-  background: #3eacd1;
-  color: aliceblue;
-  padding: 20px 10px;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
-          box-shadow: 0px 0px 50px 5px rgba(191, 182, 245, 0.3);
-}
-
-.welcome-block #welcome-title h2 {
-  font-size: 4em;
-  text-shadow: 0 0 5px #fff;
-}
-
-/* ----------------------- */
 .about-block {
   min-height: 300px;
   -webkit-box-pack: center;
@@ -1511,10 +1496,7 @@ ul {
           box-shadow: 0px 0px 6px 5px #03a8f46b;
 }
 
-/* ----------------------- */
 .planets-block {
-  /* background: rgb(253, 199, 163);
-  background: radial-gradient(circle, rgba(253, 199, 163, 1) 24%, rgba(245, 184, 225, 1) 53%, rgba(144, 154, 242, 1) 87%); */
   height: 1100px;
   min-height: 900px;
   position: relative;
@@ -1595,6 +1577,7 @@ ul {
 #planets-solar-system #orbit1 {
   width: 25%;
   height: 25%;
+  /* background-color: #a5a5a5; */
   border: 5px solid rgba(255, 255, 255, 0.35);
   position: absolute;
   border-radius: 50%;
@@ -1603,6 +1586,7 @@ ul {
 #planets-solar-system #orbit2 {
   width: 35%;
   height: 35%;
+  /* background-color: #a5a5a5; */
   border: 5px solid rgba(255, 255, 255, 0.35);
   position: absolute;
   border-radius: 50%;
@@ -1667,6 +1651,7 @@ ul {
   height: 95%;
   /* background-color: #a5a5a5; */
   border: 5px solid rgba(255, 255, 255, 0.35);
+  position: absolute;
   border-radius: 50%;
 }
 
@@ -1684,7 +1669,6 @@ ul {
   height: 100%;
 }
 
-/* adding overlap when hovering on planets */
 #planets-solar-system #sun > div:hover {
   z-index: 100;
 }
@@ -1695,9 +1679,30 @@ ul {
   transition: 0.5s;
 }
 
-/* enlarging planet images when hovering on them */
 #planets-solar-system #sun > div > img:hover {
   width: 105%;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 #planets-solar-system #sun #mercury {
@@ -1801,26 +1806,18 @@ ul {
   top: -360px;
 }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.line-break {
+  height: 5px;
+  width: 80%;
+  border-top: 3px solid #333333;
+  border-radius: 1px;
+  margin: 10px auto;
 }
 
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.header {
+  text-align: center;
+  font-size: 4em;
+  margin: 20px 0;
 }
 
 /* ----------------------- */
