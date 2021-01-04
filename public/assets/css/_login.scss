@@ -70,7 +70,8 @@
       display: flex;
       flex-direction: column;
 
-      .login-field-block {
+      .login-field-block,
+      .password-field-block {
         & > * {
           margin: 10px auto;
           padding: 5px;

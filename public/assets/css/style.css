@@ -2034,7 +2034,8 @@ ul {
           flex-direction: column;
 }
 
-.login-signup-block .card form .login-field-block > * {
+.login-signup-block .card form .login-field-block > *,
+.login-signup-block .card form .password-field-block > * {
   margin: 10px auto;
   padding: 5px;
   text-align: center;
@@ -2294,7 +2295,7 @@ table tfoot .links a {
 }
 
 @-webkit-keyframes final-submit-button-gradient-animation {
-  from {
+  0% {
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
   }
@@ -2302,14 +2303,14 @@ table tfoot .links a {
     -webkit-box-shadow: 0px 0px 30px 20px #7cffb7;
             box-shadow: 0px 0px 30px 20px #7cffb7;
   }
-  to {
+  100% {
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
   }
 }
 
 @keyframes final-submit-button-gradient-animation {
-  from {
+  0% {
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
   }
@@ -2317,14 +2318,14 @@ table tfoot .links a {
     -webkit-box-shadow: 0px 0px 30px 20px #7cffb7;
             box-shadow: 0px 0px 30px 20px #7cffb7;
   }
-  to {
+  100% {
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
   }
 }
 
 @-webkit-keyframes final-submit-button-gradient-animation-hover {
-  from {
+  0% {
     background-position: 0%;
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
@@ -2334,7 +2335,7 @@ table tfoot .links a {
     -webkit-box-shadow: 0px 0px 100px 50px #7cffb7;
             box-shadow: 0px 0px 100px 50px #7cffb7;
   }
-  to {
+  100% {
     background-position: 400%;
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
@@ -2342,7 +2343,7 @@ table tfoot .links a {
 }
 
 @keyframes final-submit-button-gradient-animation-hover {
-  from {
+  0% {
     background-position: 0%;
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
@@ -2352,14 +2353,14 @@ table tfoot .links a {
     -webkit-box-shadow: 0px 0px 100px 50px #7cffb7;
             box-shadow: 0px 0px 100px 50px #7cffb7;
   }
-  to {
+  100% {
     background-position: 400%;
     -webkit-box-shadow: 0px 0px 10px 10px #7cffb7;
             box-shadow: 0px 0px 10px 10px #7cffb7;
   }
 }
 
-#timestamp-formform {
+form#timestamp-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2375,7 +2376,7 @@ table tfoot .links a {
   margin: auto;
 }
 
-#timestamp-formform button {
+form#timestamp-form button {
   margin-top: 50px;
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #89ffae), color-stop(50%, #a3abf9), color-stop(90%, #89ffae));
   background: linear-gradient(90deg, #89ffae 10%, #a3abf9 50%, #89ffae 90%);
@@ -2393,12 +2394,12 @@ table tfoot .links a {
           animation: final-submit-button-gradient-animation 5s linear 0s infinite;
 }
 
-#timestamp-formform button:hover {
+form#timestamp-form button:hover {
   -webkit-animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
           animation: final-submit-button-gradient-animation-hover 5s linear 0s infinite;
 }
 
-#timestampinput {
+input#timestamp {
   margin-top: 25px;
   text-align: center;
   height: 100px;
